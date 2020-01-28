@@ -121,7 +121,7 @@ if ($EGGinput) {
 
 
 <div style="margin: 0 auto" class="showLoader container" id="loader">
-<img src="images/loading.gif" width="100">
+<img src="images/loading.gif" width="60">
 </div>
 <!--Graph section-->
 
