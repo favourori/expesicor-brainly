@@ -1,6 +1,6 @@
 <?php
 //File input. Name must be data.txt
-$EGGinput = fopen("data.txt", "r");
+$EEGInput = fopen("data.txt", "r");
 
 //declear variables
 $arr = [];
@@ -13,8 +13,8 @@ $averageDeviceOneValue;
 $averageDeviceTwoValue;
 
 //Check if data exists & extract data into 3 arrays (1. Timestamp, electrodeOne, Electrode2)
-if ($EGGinput) {
-    while (($line = fgets($EGGinput)) !== false) {
+if ($EEGInput) {
+    while (($line = fgets($EEGInput)) !== false) {
         $line = preg_replace('/\s+/', ' ', $line);
         $s = explode(' ', trim($line));
         array_push($arr, $s);
@@ -26,14 +26,13 @@ if ($EGGinput) {
         array_push($electrodeTwoReadings, $arr[$x][2]);
     }
 
+    //Loop through file and extract data
     $averageTime = array_sum($timeStamp) / count($timeStamp);
     $averageDeviceOneValue = array_sum($electrodeOneReadings) / count($electrodeOneReadings);
     $averageDeviceTwoValue = array_sum($electrodeTwoReadings) / count($electrodeTwoReadings);
     $timeStamps = count($timeStamp);
 
-    //echo ($electrodeTwoReadings[78999]);
-
-    fclose($EGGinput);
+    fclose($EEGInput);
 
 } else {
     die("Error: The EGG data does not exist.");
