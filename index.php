@@ -119,8 +119,9 @@ if ($EEGInput) {
 </div>
 
 
-<div style="margin: 0 auto" class="showLoader container" id="loader">
+<div style=" text-align: center;" class="showLoader container" id="loader">
 <img src="images/loading.gif" width="60">
+
 </div>
 <!--Graph section-->
 
