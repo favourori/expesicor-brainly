@@ -153,7 +153,7 @@ while ($x < count($arr)) {
           title: 'Device Reading'
         },
         vAxis: {
-          title: 'TimeStamp (miliseconds)'
+          title: 'TimeStamp (seconds)'
         },
         series: {
           1: {curveType: 'function'}
@@ -186,7 +186,7 @@ while ($x < count($arr)) {
           title: 'Device Reading'
         },
         vAxis: {
-          title: 'TimeStamp (miliseconds)'
+          title: 'TimeStamp (seconds)'
         },
         series: {
           1: {curveType: 'function'}
