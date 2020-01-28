@@ -192,14 +192,17 @@ while ($x < count($arr)) {
         series: {
           1: {curveType: 'function'}
         }
+       
       };
 
 var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
 chart2.draw(data, options);
     }
 
-   
-
+   /*
+   if this were to be an async req, 
+   I would have hidden the loader gif on recieveing the data
+   */
    setTimeout(() => {
     document.getElementById("loader").style.display = "none";
    }, 3000);
