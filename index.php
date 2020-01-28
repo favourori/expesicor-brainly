@@ -53,6 +53,17 @@ if ($EGGinput) {
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+    .showLoader{
+        display: block;
+    }
+
+    .hideLoader{
+        display: none;
+    }
+
+    </style>
 </head>
 <body>
 
@@ -80,7 +91,7 @@ if ($EGGinput) {
       <div class="col s12 m4">
          <div class="card white z-depth-1">
             <div class="card-content">
-            <span class="card-title">Time Recordings</span>
+            <span class="card-title" style="color: #81C341">Time Recordings</span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
@@ -90,7 +101,7 @@ if ($EGGinput) {
       <div class="col s12 m4">
        <div class="card white">
         <div class="card-content">
-          <span class="card-title">Avg. Electrode A (value) </span>
+          <span class="card-title" style="color:#81C341">Avg. Electrode A (value) </span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceOneValue) ?></p>
         </div>
        </div>
@@ -100,7 +111,7 @@ if ($EGGinput) {
       <div class="col s12 m4">
         <div class="card white">
         <div class="card-content">
-          <span class="card-title">Avg. Electrode B (value) </span>
+          <span class="card-title" style="color:#81C341">Avg. Electrode B (value) </span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceTwoValue) ?></p>
         </div>
           </div>
@@ -108,6 +119,10 @@ if ($EGGinput) {
     </div>
 </div>
 
+
+<div style="margin: 0 auto" class="showLoader" id="loader">
+<img src="images/loading.gif">
+</div>
 <!--Graph section-->
 
 <!--Graph For Device 1 against timestamp-->
@@ -123,14 +138,14 @@ function drawCurveTypes() {
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
       data.addColumn('number', 'Electrode A');
-      
+
 //Looping & adding data to the graph
       data.addRows([
 <?php
-        $x = 0;
-        while ($x < count($arr)) {
-        echo "[" . $electrodeOneReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
-        $x++;
+$x = 0;
+while ($x < count($arr)) {
+    echo "[" . $electrodeOneReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
+    $x++;
 }?>
       ]);
 
@@ -155,6 +170,7 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawCurveTypes2);
 
 function drawCurveTypes2() {
+
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
       data.addColumn('number', 'Electrode B');
@@ -181,6 +197,12 @@ while ($x < count($arr)) {
 var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
 chart2.draw(data, options);
     }
+
+   
+
+   setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+   }, 1000);
 
   </script>
    <!-- Compiled and minified JavaScript -->
