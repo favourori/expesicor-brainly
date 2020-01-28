@@ -39,9 +39,8 @@ if ($EEGInput) {
 }
 ?>
 
-
 <!--Ui Design work-->
-<!--DISPLAY: Summary Stat & 1 Graph (Combination) -->
+<!--DISPLAY: Summary Stat(s) & 1 Graph (Combination) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
