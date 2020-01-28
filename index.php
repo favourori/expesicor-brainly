@@ -74,77 +74,68 @@ if ($EGGinput) {
 <!--Dashboard-->
 <div class="container" style="margin-top:60px">
 <div class="row">
-      <div class="col s12 m4">
 
-      <div class="card white z-depth-1">
-        <div class="card-content">
-          <span class="card-title">Time Recordings</span>
-          <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></p>
+<!--Time Recording-->
+      <div class="col s12 m4">
+         <div class="card white z-depth-1">
+            <div class="card-content">
+            <span class="card-title">Time Recordings</span>
+          < p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
-
       </div>
 
+<!--Avg Device 1-->
       </div>
       <div class="col s12 m4">
-      
-      <div class="card white">
+       <div class="card white">
         <div class="card-content">
           <span class="card-title">AVG Electrode A (value) </span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceOneValue) ?></p>
         </div>
+       </div>
 
-      </div>
-      
-      
+<!--Avg Device 2-->
       </div>
       <div class="col s12 m4">
-      
-      <div class="card white">
+        <div class="card white">
         <div class="card-content">
           <span class="card-title">AVG Electrode B (value) </span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceTwoValue) ?></p>
         </div>
-
-      </div></div>
-
+          </div>
+      </div>
     </div>
-
-
-
-
-
-
 </div>
 
 
+<!--Graph section-->
+
+<!--Graph For Device 1 against timestamp-->
   <div id="chart_div" style="height: 450px"></div>
+
+<!--Graph For device 2 against Timestamp-->
   <div id="chart_div2" style="height: 450px"></div>
 
-
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-  <script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(drawCurveTypes);
-
 function drawCurveTypes() {
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
       data.addColumn('number', 'Electrode A');
 
 
+//Looping & adding data to the graph
       data.addRows([
-
-        <?php
-$x = 0;
-while ($x < count($arr)) {
-    echo "[" . $deviceOneReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
-    $x++;
-
-}
-
-?>
+<?php
+        $x = 0;
+         while ($x < count($arr)) {
+         echo "[" . $deviceOneReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
+         $x++;
+}?>
       ]);
+
 
       var options = {
         hAxis: {
@@ -163,16 +154,10 @@ while ($x < count($arr)) {
     }
 
 
+//Graph 2
 
-
-
-
-
-
-
-
-    google.charts.load('current', {packages: ['corechart', 'line']});
-  google.charts.setOnLoadCallback(drawCurveTypes2);
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCurveTypes2);
 
 function drawCurveTypes2() {
       var data = new google.visualization.DataTable();
