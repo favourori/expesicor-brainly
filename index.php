@@ -120,8 +120,8 @@ if ($EGGinput) {
 </div>
 
 
-<div style="margin: 0 auto" class="showLoader" id="loader">
-<img src="images/loading.gif">
+<div style="margin: 0 auto" class="showLoader container" id="loader">
+<img src="images/loading.gif" width="100">
 </div>
 <!--Graph section-->
 
@@ -202,7 +202,7 @@ chart2.draw(data, options);
 
    setTimeout(() => {
     document.getElementById("loader").style.display = "none";
-   }, 1000);
+   }, 3000);
 
   </script>
    <!-- Compiled and minified JavaScript -->
