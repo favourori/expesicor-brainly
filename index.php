@@ -25,8 +25,7 @@ if ($EEGInput) {
         array_push($electrodeOneReadings, $arr[$x][1]);
         array_push($electrodeTwoReadings, $arr[$x][2]);
     }
-
-    //Loop through file and extract data
+   //Loop through file and extract data
     $averageTime = array_sum($timeStamp) / count($timeStamp);
     $averageDeviceOneValue = array_sum($electrodeOneReadings) / count($electrodeOneReadings);
     $averageDeviceTwoValue = array_sum($electrodeTwoReadings) / count($electrodeTwoReadings);
@@ -79,7 +78,6 @@ if ($EEGInput) {
   </nav>
 
 </div>
-
 
 <!--Dashboard-->
 <div class="container" style="margin-top:60px">
