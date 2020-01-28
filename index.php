@@ -50,63 +50,166 @@ if ($EGGinput) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Brainly - Expesicor</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 
-<h1>Brainly by Expesicor.</h1>
-<h3>Average TimeStamp : <small style="color: grey"><?php echo ($averageTime) ?></small></h3>
-<h3>Time Stamps Recorded : <small style="color: grey"><?php echo ($timeStamps) ?></small></h3>
-<h3>Average EGG value - Device 1 : <small style="color: grey"><?php echo ($averageDeviceOneValue) ?></small></h3>
-<h3>Average EGG value - Device 2 <small style="color: grey"><?php echo ($averageDeviceTwoValue) ?></small></h3>
+<!--Navbar-->
+<div>
+<nav style="background-color: #125FAD " class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Brainly<span style="font-size: 40px; color: #81C341">.</span> <small style="font-size: 12px; font-weight: 200">From Expesicor</small> </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">About</a></li>
+        <li><a href="badges.html">How to use</a></li>
 
-  <div id="chart_div"></div>
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+
+<!--Dashboard-->
+<div class="container" style="margin-top:60px">
+<div class="row">
+      <div class="col s12 m4">
+
+      <div class="card white z-depth-1">
+        <div class="card-content">
+          <span class="card-title">Time Recordings</span>
+          <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></p>
+        </div>
+
+      </div>
+
+      </div>
+      <div class="col s12 m4">
+      
+      <div class="card white">
+        <div class="card-content">
+          <span class="card-title">AVG Electrode A (value) </span>
+          <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceOneValue) ?></p>
+        </div>
+
+      </div>
+      
+      
+      </div>
+      <div class="col s12 m4">
+      
+      <div class="card white">
+        <div class="card-content">
+          <span class="card-title">AVG Electrode B (value) </span>
+          <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceTwoValue) ?></p>
+        </div>
+
+      </div></div>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+  <div id="chart_div" style="height: 450px"></div>
+  <div id="chart_div2" style="height: 450px"></div>
+
+
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <script>
   google.charts.load('current', {packages: ['corechart', 'line']});
-  google.charts.setOnLoadCallback(drawLogScales);
+  google.charts.setOnLoadCallback(drawCurveTypes);
 
-function drawLogScales() {
+function drawCurveTypes() {
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
       data.addColumn('number', 'Electrode A');
+
+
+      data.addRows([
+
+        <?php
+$x = 0;
+while ($x < count($arr)) {
+    echo "[" . $deviceOneReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
+    $x++;
+
+}
+
+?>
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Device Reading'
+        },
+        vAxis: {
+          title: 'Time Stamp (miliseconds)'
+        },
+        series: {
+          1: {curveType: 'function'}
+        }
+      };
+
+      var chart1 = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart1.draw(data, options);
+    }
+
+
+
+
+
+
+
+
+
+
+    google.charts.load('current', {packages: ['corechart', 'line']});
+  google.charts.setOnLoadCallback(drawCurveTypes2);
+
+function drawCurveTypes2() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
       data.addColumn('number', 'Electrode B');
 
 
       data.addRows([
 
         <?php
-
 $x = 0;
 while ($x < count($arr)) {
-    echo "[" . $deviceOneReadings[$x] . ", " . $deviceTwoReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
+    echo "[" . $deviceTwoReadings[$x] . ", " . intval($timeStamp[$x]) . "],";
     $x++;
 
 }
 
 ?>
-
-
-
       ]);
 
       var options = {
-        height: 450,
         hAxis: {
-          title: 'Electrodes Reading',
-          logScale: true
+          title: 'Device Reading'
         },
         vAxis: {
-          title: 'Time Stamp',
-          logScale: true
+          title: 'Time Stamp (miliseconds)'
         },
-        colors: ['#a52714', '#2388BC']
+        series: {
+          1: {curveType: 'function'}
+        }
       };
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
+      var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
+      chart2.draw(data, options);
     }
 
-  </script>
+  </script>    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
