@@ -1,6 +1,8 @@
-# 🧠 Brainly - EGG Analayzer (https://www.expesicor.com)
+# 🧠 Brainly - EGG Analayzer 
 
 Lightweight PHP program (App) that opens an attached EEG file (.txt) and displays it with a graph and summary statistics on a user interface.
+
+https://www.expesicor.com
 
 
 ## ✨ How to run program
