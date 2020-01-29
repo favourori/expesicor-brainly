@@ -60,16 +60,10 @@ if ($EEGInput) {
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <style>
     .showLoader{
         display: block;
     }
-
-    .hideLoader{
-        display: none;
-    }
-
     </style>
 </head>
 <body>
@@ -82,17 +76,14 @@ if ($EEGInput) {
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="https://github.com/favourori/expesicor-brainly">About</a></li>
         <li><a href="https://github.com/favourori/expesicor-brainly">How to use</a></li>
-
       </ul>
     </div>
   </nav>
-
 </div>
 
 <!--Dashboard-->
 <div class="container" style="margin-top:60px">
 <div class="row">
-
 <!--Time Recording-->
       <div class="col s12 m4">
          <div class="card white z-depth-1">
@@ -101,7 +92,6 @@ if ($EEGInput) {
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
-
 <!--Avg Device 1-->
       </div>
       <div class="col s12 m4">
@@ -111,7 +101,6 @@ if ($EEGInput) {
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceOneValue) ?></p>
         </div>
        </div>
-
 <!--Avg Device 2-->
       </div>
       <div class="col s12 m4">
@@ -124,7 +113,6 @@ if ($EEGInput) {
       </div>
     </div>
 </div>
-
 
 <div style=" text-align: center;" class="showLoader container" id="loader">
 <img src="images/loading.gif" width="60">
@@ -205,7 +193,6 @@ while ($x < count($arr)) {
 var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
 chart2.draw(data, options);
     }
-
    /*
    if this were to be an async req, 
    I would have hidden the loader gif on recieveing the data
