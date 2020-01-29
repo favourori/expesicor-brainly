@@ -97,7 +97,7 @@ if ($EEGInput) {
       <div class="col s12 m4">
          <div class="card white z-depth-1">
             <div class="card-content">
-            <span class="card-title" style="color: #81C341">Time Recordings</span>
+            <span class="card-title" style="color: #2097D4">Time Recordings</span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
@@ -107,7 +107,7 @@ if ($EEGInput) {
       <div class="col s12 m4">
        <div class="card white">
         <div class="card-content">
-          <span class="card-title" style="color:#81C341">Avg. Electrode A (value) </span>
+          <span class="card-title" style="color:#2097D4">Avg. Electrode A (value) </span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceOneValue) ?></p>
         </div>
        </div>
@@ -117,7 +117,7 @@ if ($EEGInput) {
       <div class="col s12 m4">
         <div class="card white">
         <div class="card-content">
-          <span class="card-title" style="color:#81C341">Avg. Electrode B (value) </span>
+          <span class="card-title" style="color:#2097D4">Avg. Electrode B (value) </span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($averageDeviceTwoValue) ?></p>
         </div>
           </div>
