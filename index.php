@@ -3,13 +3,24 @@
 $EEGInput = fopen("data.txt", "r");
 
 //declear variables
-$arr = [];
-$timeStamp = [];
-$electrodeOneReadings = [];
-$electrodeTwoReadings = [];
-$averageTime;
+$arr = []; //main array that holds every extracted data from data.txt
+$timeStamp = []; //Holds the timestamps
+$electrodeOneReadings = []; //Holds values from device 1
+$electrodeTwoReadings = []; //Holds values from device 2
+
+/* 
+the number of times a reading was done - in this case 79,000
+*/
 $timeStamps;
-$averageDeviceOneValue;
+
+/* 
+sum of device 1 values / number of values (Average)
+*/
+$averageDeviceOneValue; 
+
+/* 
+sum of device 2 values / number of values  (Average)
+*/
 $averageDeviceTwoValue;
 
 //Check if data exists & extract data into 3 arrays (1. Timestamp, electrodeOne, Electrode2)
@@ -26,7 +37,6 @@ if ($EEGInput) {
         array_push($electrodeTwoReadings, $arr[$x][2]);
     }
    //Loop through file and extract data
-    $averageTime = array_sum($timeStamp) / count($timeStamp);
     $averageDeviceOneValue = array_sum($electrodeOneReadings) / count($electrodeOneReadings);
     $averageDeviceTwoValue = array_sum($electrodeTwoReadings) / count($electrodeTwoReadings);
     $timeStamps = count($timeStamp);
