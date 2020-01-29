@@ -14,4 +14,4 @@ https://www.expesicor.com
 
 
 ## 📸 ScreenShot
-![](shot.png?raw=true "Light Theme")
+![](screenshot.png?raw=true "Light Theme")
