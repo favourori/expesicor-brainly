@@ -49,7 +49,7 @@ if ($EEGInput) {
 ?>
 
 <!--Ui Design work-->
-<!--DISPLAY: Summary Stat(s) & 1 Graph (Combination) -->
+<!--DISPLAY: Summary Stat(s) & 2 Graphs (Electrode 1 & 2) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
