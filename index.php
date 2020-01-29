@@ -70,8 +70,8 @@ if ($EEGInput) {
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">Brainly<span style="font-size: 40px; color: #81C341">.</span> <small style="font-size: 13px; font-weight: 200">From Expesicor</small> </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">About</a></li>
-        <li><a href="badges.html">How to use</a></li>
+        <li><a href="https://github.com/favourori/expesicor-brainly">About</a></li>
+        <li><a href="https://github.com/favourori/expesicor-brainly">How to use</a></li>
 
       </ul>
     </div>
