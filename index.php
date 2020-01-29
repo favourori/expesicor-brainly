@@ -97,7 +97,7 @@ if ($EEGInput) {
       <div class="col s12 m4">
          <div class="card white z-depth-1">
             <div class="card-content">
-            <span class="card-title" style="color: #2097D4">Time Recordings</span>
+            <span class="card-title" style="color: #2097D4">Timestamp Recorded</span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
