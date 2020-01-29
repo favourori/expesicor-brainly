@@ -133,9 +133,9 @@ if ($EEGInput) {
 <!--Graph section-->
 
 <!--Graph For Device 1 against timestamp-->
-  <div id="chart_div" style="height: 450px"></div>
+  <div id="chart_div" style="height: 510px"></div>
 <!--Graph For device 2 against Timestamp-->
-  <div id="chart_div2" style="height: 450px"></div>
+  <div id="chart_div2" style="height: 510px"></div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
