@@ -54,7 +54,7 @@ require('process_data.php')
        <div class="card white">
         <div class="card-content">
           <span class="card-title" style="color:#2097D4">Avg. Electrode A (value) </span>
-          <p style="font-size: 19px; font-weight: 200"> <?php echo (round($averageDeviceOneValue, 8)) ?></p>
+          <p style="font-size: 19px; font-weight: 200"> <?php echo (number_format($averageDeviceOneValue, 8)) ?></p>
         </div>
        </div>
 <!--Avg Device 2-->
