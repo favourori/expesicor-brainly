@@ -82,13 +82,14 @@ if ($EEGInput) {
 </div>
 
 <!--Dashboard-->
-<div class="container" style="margin-top:60px">
+<div class="container" style="margin-top:70px">
+<h1 style="font-size: 20px; font-weight: 300; letter-spacing: 2px; color: grey">SUMMARY</h1>
 <div class="row">
 <!--Time Recording-->
       <div class="col s12 m4">
          <div class="card white z-depth-1">
             <div class="card-content">
-            <span class="card-title" style="color: #2097D4">Timestamp Recorded</span>
+            <span class="card-title" style="color: #2097D4;">Timestamp Recorded</span>
           <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
