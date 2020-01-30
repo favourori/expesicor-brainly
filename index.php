@@ -1,5 +1,7 @@
 <?php
-//File input. Name must be data.txt
+/*
+File input. File name must be data.txt & must be placed at the root dir
+*/
 $EEGInput = fopen("data.txt", "r");
 
 //declear variables
@@ -43,6 +45,7 @@ if ($EEGInput) {
     fclose($EEGInput);
 
 } else {
+  //Throws error if data.txt is not found
     die("Error: The EGG data does not exist.");
 }
 ?>
@@ -117,7 +120,6 @@ if ($EEGInput) {
 <!--loading indicator-->
 <div style=" text-align: center;" class="showLoader container" id="loader">
 <img src="images/loading.gif" width="60">
-
 </div>
 <!--Graph section-->
 
@@ -207,6 +209,5 @@ chart2.draw(data, options);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
-
 
 <!--Thank you very much ☺️-->
