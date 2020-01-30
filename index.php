@@ -45,7 +45,7 @@ require('process_data.php')
          <div class="card white z-depth-1">
             <div class="card-content">
             <span class="card-title" style="color: #2097D4;">Timestamp Recorded</span>
-          <p style="font-size: 18px; font-weight: 200"> <?php echo ($timeStamps) ?></>
+          <p style="font-size: 19px; font-weight: 200"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
 <!--Avg Device 1-->
@@ -54,7 +54,7 @@ require('process_data.php')
        <div class="card white">
         <div class="card-content">
           <span class="card-title" style="color:#2097D4">Avg. Electrode A (value) </span>
-          <p style="font-size: 18px; font-weight: 200"> <?php echo (round($averageDeviceOneValue, 8)) ?></p>
+          <p style="font-size: 19px; font-weight: 200"> <?php echo (round($averageDeviceOneValue, 8)) ?></p>
         </div>
        </div>
 <!--Avg Device 2-->
@@ -63,7 +63,7 @@ require('process_data.php')
         <div class="card white">
         <div class="card-content">
           <span class="card-title" style="color:#2097D4">Avg. Electrode B (value) </span>
-          <p style="font-size: 18px; font-weight: 200"> <?php echo (round($averageDeviceTwoValue, 8)) ?></p>
+          <p style="font-size: 19px; font-weight: 200"> <?php echo (round($averageDeviceTwoValue, 8)) ?></p>
         </div>
           </div>
       </div>
