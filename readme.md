@@ -7,7 +7,7 @@ https://www.expesicor.com
 
 ## ✨ How to run program
 
-1. This app needs a server to run. WAMPP / XAMPP / Any online server
+1. This app needs a server to run. WAMPP / XAMPP / Any other server (online or offline)
 2. Upload the app folder to the public directory of your server (htdocs for XAMPP)
 3. Put your data (.txt format) in the root of the app folder. Name of file must be "data.txt"
 4. Start your server and navigate to localhost/[appname] to run app
