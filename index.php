@@ -12,12 +12,10 @@ $electrodeTwoReadings = []; //Holds values from device 2
 the number of times a reading was done - in this case 79,000
 */
 $timeStamps;
-
 /* 
 sum of device 1 values / number of values (Average)
 */
 $averageDeviceOneValue; 
-
 /* 
 sum of device 2 values / number of values  (Average)
 */
@@ -115,6 +113,7 @@ if ($EEGInput) {
     </div>
 </div>
 
+<!--loading indicator-->
 <div style=" text-align: center;" class="showLoader container" id="loader">
 <img src="images/loading.gif" width="60">
 
