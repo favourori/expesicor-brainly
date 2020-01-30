@@ -51,7 +51,7 @@ require('process_data.php')
 <!--Avg Device 1-->
       </div>
       <div class="col s12 m4">
-       <div class="card white hoverable">
+       <div class="card white">
         <div class="card-content">
           <span class="card-title" style="color:#2097D4; font-weight:200">Avg. Electrode A (value) </span>
           <p style="font-size: 33px; font-weight: 300"> <?php echo (number_format($averageDeviceOneValue, 8)) ?></p>
