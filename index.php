@@ -37,24 +37,24 @@ require('process_data.php')
 </div>
 
 <!--Dashboard-->
-<div class="container" style="margin-top:70px">
+<div class="container" style="margin-top:55px">
 <h1 style="font-size: 20px; font-weight: 300; letter-spacing: 2px; color: grey">SUMMARY</h1>
 <div class="row">
 <!--Time Recording-->
       <div class="col s12 m4">
          <div class="card white z-depth-1">
             <div class="card-content">
-            <span class="card-title" style="color: #2097D4;">Timestamp Recorded</span>
-          <p style="font-size: 19px; font-weight: 200"> <?php echo ($timeStamps) ?></>
+            <span class="card-title" style="color: #2097D4; font-weight:200">Timestamp Recorded</span>
+          <p style="font-size: 33px; font-weight: 300"> <?php echo ($timeStamps) ?></>
         </div>
       </div>
 <!--Avg Device 1-->
       </div>
       <div class="col s12 m4">
-       <div class="card white">
+       <div class="card white hoverable">
         <div class="card-content">
-          <span class="card-title" style="color:#2097D4">Avg. Electrode A (value) </span>
-          <p style="font-size: 19px; font-weight: 200"> <?php echo (number_format($averageDeviceOneValue, 8)) ?></p>
+          <span class="card-title" style="color:#2097D4; font-weight:200">Avg. Electrode A (value) </span>
+          <p style="font-size: 33px; font-weight: 300"> <?php echo (number_format($averageDeviceOneValue, 8)) ?></p>
         </div>
        </div>
 <!--Avg Device 2-->
@@ -62,8 +62,8 @@ require('process_data.php')
       <div class="col s12 m4">
         <div class="card white">
         <div class="card-content">
-          <span class="card-title" style="color:#2097D4">Avg. Electrode B (value) </span>
-          <p style="font-size: 19px; font-weight: 200"> <?php echo (round($averageDeviceTwoValue, 8)) ?></p>
+          <span class="card-title" style="color:#2097D4; font-weight:200">Avg. Electrode B (value) </span>
+          <p style="font-size: 33px; font-weight: 300"> <?php echo (round($averageDeviceTwoValue, 8)) ?></p>
         </div>
           </div>
       </div>
