@@ -29,12 +29,13 @@ if ($EEGInput) {
         array_push($arr, $s);
     }
 
+    //Loop through file and extract data
     for ($x = 0; $x < count($arr); $x++) {
         array_push($timeStamp, $arr[$x][0]);
         array_push($electrodeOneReadings, $arr[$x][1]);
         array_push($electrodeTwoReadings, $arr[$x][2]);
     }
-   //Loop through file and extract data
+   //calculating average
     $averageDeviceOneValue = array_sum($electrodeOneReadings) / count($electrodeOneReadings);
     $averageDeviceTwoValue = array_sum($electrodeTwoReadings) / count($electrodeTwoReadings);
     $timeStamps = count($timeStamp);
